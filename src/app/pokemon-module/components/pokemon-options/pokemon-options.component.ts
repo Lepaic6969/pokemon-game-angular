@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,EventEmitter,Input,Output} from '@angular/core';
 import { Pokemon } from '../../interfaces/pokemon.interface';
 
 @Component({
@@ -11,7 +11,12 @@ export class PokemonOptionsComponent{
   @Input()
   public pokemons!:Pokemon[];
 
-  onClick():void{
-    alert('Funcionalidad de mostrar el resultado en desarrollo');
+  @Output()
+  public onSelect:EventEmitter<number>=new EventEmitter();
+
+
+
+  onClick(id:number):void{
+    this.onSelect.emit(id);
   }
 }

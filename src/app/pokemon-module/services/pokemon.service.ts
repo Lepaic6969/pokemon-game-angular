@@ -39,4 +39,9 @@ export class PokemonService {
   selectPokemon():void{
     this.pokemon=this.pokemons[Math.floor(Math.random()*4)];
   }
+  resetPokemons():void{
+    this.pokemons=[];
+  }
 }
+
+

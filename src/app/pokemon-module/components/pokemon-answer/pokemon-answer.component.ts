@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'pokemon-answer',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './pokemon-answer.component.css'
 })
 export class PokemonAnswerComponent {
+  @Input()
+  public message:string='Mensaje';
+  @Output()
+  public onReset:EventEmitter<void>=new EventEmitter();
 
+  onResetGame():void{
+    this.onReset.emit();
+  }
 }

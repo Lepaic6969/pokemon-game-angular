@@ -4,16 +4,16 @@
       [src]="pokemonUrl"
       class="hidden-pokemon"
       alt="pokemon"
-      *ngIf="true, else imagenColor">
+      *ngIf="!showPokemon, else imagenColor">
 
     <!-- Este es elpokemón a color -->
   <ng-template #imagenColor>
     <img
-      
+
     [src]="pokemonUrl"
     class="fade-in"
     alt="pokemon">
   </ng-template>
 
-      
+
 </div>
