@@ -1,0 +1,12 @@
+<div *ngIf="pokemons.length>0,else loader">
+    <h1>¿Quién es este Pokemon?</h1>
+    <pokemon-picture [pokemonId]="pokemonId"></pokemon-picture>
+    <pokemon-options [pokemons]="pokemons"></pokemon-options>
+</div>
+<ng-template #loader>
+    <h1>Espere...</h1>
+</ng-template>
+
+<pokemon-answer *ngIf="false">
+
+</pokemon-answer>
